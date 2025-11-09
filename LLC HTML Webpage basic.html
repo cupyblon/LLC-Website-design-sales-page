@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Villalpando LLC — Services</title>
+  <meta name="description" content="Tech & handyman services. Fast, reliable, and fairly priced." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0d12; --card:#12151d; --muted:#99a1b3; --text:#e8ecf7; --brand:#5cc8ff; --accent:#86efac; --danger:#fda4af;
+      --radius:18px; --pad:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,#0b0d12,#0a0f19 40%,#0b0d12);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:32px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0}
+    .logo{font-weight:800;letter-spacing:.2px}
+    nav a{margin-left:18px;color:var(--muted)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;margin-top:10px}
+    .card{background:var(--card);border-radius:var(--radius);padding:clamp(18px,3vw,28px);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.06)}
+    .badge{display:inline-block;background:rgba(92,200,255,.15);color:var(--brand);padding:6px 10px;border-radius:999px;font-weight:600;font-size:12px}
+    h1{font-size:clamp(28px,4.8vw,46px);line-height:1.15;margin:10px 0 8px}
+    .sub{color:var(--muted)}
+    .grid{display:grid;gap:18px}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .pill{display:inline-flex;align-items:center;gap:10px;background:#0f1420;border:1px solid rgba(255,255,255,.06);padding:10px 14px;border-radius:999px}
+    .list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+    .list li{display:flex;gap:12px}
+    .check{color:var(--accent)}
+    .btn{display:inline-block;background:linear-gradient(180deg,#60a5fa,#3b82f6);color:#fff;padding:12px 16px;border-radius:12px;font-weight:700;box-shadow:0 8px 24px rgba(59,130,246,.35)}
+    .btn.alt{background:transparent;border:1px solid rgba(255,255,255,.12);color:var(--text)}
+    .section{margin-top:54px}
+    .kpis{display:flex;gap:16px;flex-wrap:wrap}
+    .kpis .card{flex:1;min-width:180px;text-align:center}
+    .price{font-size:32px;font-weight:800}
+    .muted{color:var(--muted)}
+    .table{width:100%;border-collapse:collapse;font-size:14px}
+    .table th,.table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .form{display:grid;gap:12px}
+    input,textarea,select{width:100%;background:#0f1420;color:var(--text);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px}
+    .two{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+    footer{opacity:.8;margin:34px 0;color:var(--muted);font-size:14px}
+    @media (max-width:860px){
+      .hero{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      header{flex-wrap:wrap}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">Villalpando LLC</div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#calc">Estimator</a>
+        <a href="#contact" class="btn" style="padding:8px 12px">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <span class="badge">Tech • Web • Automation</span>
+        <h1>Fast, no‑nonsense IT & simple websites that just work.</h1>
+        <p class="sub">Field‑tested IT support, light automations, and clean one‑page sites for small businesses around Brookfield & the Chicago area.</p>
+        <div style="display:flex;gap:12px;margin-top:14px">
+          <a href="#pricing" class="btn">See Packages</a>
+          <a href="#contact" class="btn alt">Request a Quote</a>
+        </div>
+        <div class="kpis" style="margin-top:16px">
+          <div class="card"><div class="price">18 yrs</div><div class="muted">Pro IT experience</div></div>
+          <div class="card"><div class="price">48 hr</div><div class="muted">Typical turnaround</div></div>
+          <div class="card"><div class="price">4.9★</div><div class="muted">Client satisfaction</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">What you get</h3>
+        <ul class="list">
+          <li><span class="check">✔</span><span>Mobile‑first page with clean layout & clear CTA</span></li>
+          <li><span class="check">✔</span><span>Contact form wired to your email (Formspree/Netlify)</span></li>
+          <li><span class="check">✔</span><span>Fast hosting on GitHub Pages or Netlify</span></li>
+          <li><span class="check">✔</span><span>Optional quote calculator (no login, no database)</span></li>
+        </ul>
+        <p class="muted" style="margin-top:8px">No monthly subscription required. You keep the files.</p>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <h2>Services</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>One‑Page Website</h3>
+          <p class="muted">Hero, services, testimonials, contact. Deployed to free hosting.</p>
+        </div>
+        <div class="card">
+          <h3>Quote Calculator</h3>
+          <p class="muted">Simple price estimator with your rates & options. Exports lead to email.</p>
+        </div>
+        <div class="card">
+          <h3>IT Micro‑Automation</h3>
+          <p class="muted">Tiny scripts & reports that save time (PowerShell, NetSuite).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section">
+      <h2>Packages</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Starter</h3>
+          <p class="price">$399</p>
+          <ul class="list">
+            <li><span class="check">✔</span><span>One‑page site</span></li>
+            <li><span class="check">✔</span><span>Contact form</span></li>
+            <li><span class="check">✔</span><span>Basic SEO</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Pro</h3>
+          <p class="price">$699</p>
+          <ul class="list">
+            <li><span class="check">✔</span><span>Everything in Starter</span></li>
+            <li><span class="check">✔</span><span>Quote calculator</span></li>
+            <li><span class="check">✔</span><span>2 rounds of edits</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Plus</h3>
+          <p class="price">$899</p>
+          <ul class="list">
+            <li><span class="check">✔</span><span>Everything in Pro</span></li>
+            <li><span class="check">✔</span><span>Extra section (gallery or FAQ)</span></li>
+            <li><span class="check">✔</span><span>1 micro‑automation</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="calc" class="section card">
+      <h2 style="margin-top:0">Quick Estimator</h2>
+      <div class="two">
+        <label>Hours <input id="hours" type="number" min="0" step="0.5" value="4"></label>
+        <label>Hourly Rate ($) <input id="rate" type="number" min="0" step="1" value="75"></label>
+      </div>
+      <div class="two">
+        <label>Materials % <input id="materials" type="number" min="0" step="1" value="10"></label>
+        <label>Travel ($ flat) <input id="travel" type="number" min="0" step="1" value="25"></label>
+      </div>
+      <p class="muted">This calculator runs entirely in your browser—no data is sent anywhere.</p>
+      <div style="display:flex;gap:12px;align-items:center">
+        <button class="btn" id="calcBtn" type="button">Calculate</button>
+        <strong id="total" style="font-size:20px">$0.00</strong>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="grid grid-2">
+        <div class="card">
+          <h2 style="margin-top:0">Get a Free Quote</h2>
+          <form class="form" method="POST" action="https://formspree.io/f/your_form_id">
+            <div class="two">
+              <input name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <input name="phone" placeholder="Phone (optional)">
+            <textarea name="message" rows="5" placeholder="Tell me what you need…" required></textarea>
+            <button class="btn" type="submit">Send</button>
+            <small class="muted">No spam ever. I’ll reply within 1 business day.</small>
+          </form>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Frequently Asked</h3>
+          <table class="table">
+            <tr><th>Do I own the files?</th><td>Yes. I deliver clean HTML/CSS you can host anywhere.</td></tr>
+            <tr><th>Is there a monthly fee?</th><td>No. Hosting can be free (GitHub Pages/Netlify). I can set it up.</td></tr>
+            <tr><th>Can it be updated later?</th><td>Yes. Send content changes anytime—flat fee per update.</td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Villalpando LLC • Brookfield, IL • <a href="mailto:hello@villalpandollc.com">hello@villalpandollc.com</a>
+    </footer>
+  </div>
+
+  <script>
+    const $ = sel => document.querySelector(sel);
+    function formatUSD(n){return n.toLocaleString(undefined,{style:'currency',currency:'USD'})}
+    function calc(){
+      const hours = parseFloat($('#hours').value||0);
+      const rate = parseFloat($('#rate').value||0);
+      const materialsPct = parseFloat($('#materials').value||0)/100;
+      const travel = parseFloat($('#travel').value||0);
+      const labor = hours*rate;
+      const materials = labor*materialsPct;
+      const total = labor + materials + travel;
+      $('#total').textContent = formatUSD(total);
+    }
+    $('#calcBtn').addEventListener('click', calc);
+    calc();
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
