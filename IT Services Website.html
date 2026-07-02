@@ -1,154 +1,271 @@
 <!doctype html>
 <html lang="en">
-<!--IT-Services-Website-->
+<!--IT-Services-Website v2-->
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Villalpando IT Services — Reliable Tech Support & Solutions</title>
-  <meta name="description" content="Professional IT support, network setup, PC repair, and automation for homes & small businesses in Brookfield & the Chicago area." />
+  <title>Villalpando IT Services — Reliable Tech Support in Brookfield & Chicago</title>
+  <meta name="description" content="Honest, jargon-free IT support: PC repair, Wi-Fi & network setup, remote help desk, security, and automation for homes & small businesses in Brookfield and the Chicago suburbs." />
+  <meta property="og:title" content="Villalpando IT Services — Reliable Tech Support" />
+  <meta property="og:description" content="18+ years of hands-on IT experience. Remote & on-site support for Brookfield and the Chicago suburbs." />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b0d12; --card:#12151d; --muted:#99a1b3; --text:#e8ecf7; --brand:#5cc8ff; --accent:#86efac; --danger:#fda4af;
-      --radius:18px; --pad:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+      --bg:#0b0d12; --bg2:#0a0f19; --card:#12151d; --card2:#161a24; --muted:#99a1b3; --text:#e8ecf7;
+      --brand:#5cc8ff; --brand2:#3b82f6; --accent:#86efac;
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+      --border:1px solid rgba(255,255,255,.07);
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     html,body{height:100%}
-    body{margin:0;background:linear-gradient(180deg,#0b0d12,#0a0f19 40%,#0b0d12);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    body::before{content:"";position:fixed;inset:0;z-index:-1;
+      background:
+        radial-gradient(900px 500px at 80% -10%, rgba(92,200,255,.10), transparent 60%),
+        radial-gradient(700px 400px at 10% 30%, rgba(59,130,246,.08), transparent 60%),
+        linear-gradient(180deg,var(--bg),var(--bg2) 40%,var(--bg));
+    }
     a{color:var(--brand);text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:32px}
-    header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0}
-    .logo{font-weight:800;letter-spacing:.2px;font-size:18px}
+    img{max-width:100%}
+    .container{max-width:1120px;margin:0 auto;padding:0 24px}
+
+    /* ---------- Header ---------- */
+    .site-header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+      background:rgba(11,13,18,.78);border-bottom:1px solid rgba(255,255,255,.06)}
+    .site-header .inner{display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:16px}
+    .logo{font-weight:900;letter-spacing:.2px;font-size:18px;color:var(--text)}
     .logo span{color:var(--brand)}
-    nav a{margin-left:18px;color:var(--muted);font-size:15px;transition:color .2s}
-    nav a:hover{color:var(--text)}
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;margin-top:10px}
-    .card{background:var(--card);border-radius:var(--radius);padding:clamp(18px,3vw,28px);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.06)}
-    .badge{display:inline-block;background:rgba(92,200,255,.15);color:var(--brand);padding:6px 10px;border-radius:999px;font-weight:600;font-size:12px;letter-spacing:.5px}
-    h1{font-size:clamp(28px,4.8vw,46px);line-height:1.15;margin:10px 0 8px}
-    h2{font-size:clamp(22px,3vw,32px);margin-bottom:18px}
-    .sub{color:var(--muted)}
-    .grid{display:grid;gap:18px}
+    .nav-links{display:flex;align-items:center;gap:4px}
+    .nav-links a{color:var(--muted);font-size:15px;font-weight:500;padding:8px 12px;border-radius:10px;transition:color .2s,background .2s}
+    .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+    .nav-links .btn{margin-left:10px}
+    .menu-toggle{display:none;background:none;border:var(--border);border-radius:10px;color:var(--text);font-size:20px;padding:6px 12px;cursor:pointer}
+
+    /* ---------- Buttons & bits ---------- */
+    .btn{display:inline-block;background:linear-gradient(180deg,#60a5fa,#3b82f6);color:#fff;padding:13px 20px;border-radius:12px;
+      font-weight:700;font-size:15px;box-shadow:0 8px 24px rgba(59,130,246,.35);border:none;cursor:pointer;
+      transition:transform .15s,box-shadow .15s,opacity .15s}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(59,130,246,.45)}
+    .btn:active{transform:translateY(0)}
+    .btn.alt{background:transparent;border:1px solid rgba(255,255,255,.14);color:var(--text);box-shadow:none}
+    .btn.alt:hover{background:rgba(255,255,255,.05);box-shadow:none}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(92,200,255,.12);color:var(--brand);
+      padding:7px 14px;border-radius:999px;font-weight:600;font-size:13px;letter-spacing:.3px;border:1px solid rgba(92,200,255,.2)}
+    .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);
+      box-shadow:0 0 8px var(--accent);animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    .tag{display:inline-block;background:rgba(134,239,172,.12);color:var(--accent);padding:4px 11px;border-radius:999px;font-size:12px;font-weight:600}
+    .muted{color:var(--muted)}
+    .highlight{color:var(--brand);font-weight:700}
+
+    /* ---------- Layout blocks ---------- */
+    .card{background:var(--card);border-radius:var(--radius);padding:clamp(20px,3vw,30px);box-shadow:var(--shadow);border:var(--border);
+      transition:transform .2s,border-color .2s}
+    .card.hoverable:hover{transform:translateY(-4px);border-color:rgba(92,200,255,.25)}
+    .grid{display:grid;gap:20px}
     .grid-3{grid-template-columns:repeat(3,1fr)}
     .grid-2{grid-template-columns:repeat(2,1fr)}
-    .list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+    .section{padding:72px 0 0}
+    .section-head{max-width:640px;margin-bottom:32px}
+    .eyebrow{color:var(--brand);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+    h1{font-size:clamp(30px,5vw,52px);line-height:1.12;margin:14px 0 12px;font-weight:900;letter-spacing:-.5px}
+    h2{font-size:clamp(24px,3.4vw,36px);margin:0 0 10px;font-weight:800;letter-spacing:-.3px}
+    h3{font-size:19px;font-weight:700}
+    .sub{color:var(--muted);font-size:clamp(16px,1.6vw,18px)}
+    .list{display:grid;gap:11px;margin:0;padding:0;list-style:none}
     .list li{display:flex;gap:12px;align-items:flex-start}
-    .check{color:var(--accent);flex-shrink:0;margin-top:2px}
-    .btn{display:inline-block;background:linear-gradient(180deg,#60a5fa,#3b82f6);color:#fff;padding:12px 16px;border-radius:12px;font-weight:700;box-shadow:0 8px 24px rgba(59,130,246,.35);transition:opacity .2s;cursor:pointer;border:none;font-size:15px}
-    .btn:hover{opacity:.88}
-    .btn.alt{background:transparent;border:1px solid rgba(255,255,255,.12);color:var(--text);box-shadow:none}
-    .section{margin-top:60px}
-    .kpis{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px}
-    .kpis .card{flex:1;min-width:120px;text-align:center;padding:16px 12px}
-    .price{font-size:32px;font-weight:800}
-    .muted{color:var(--muted)}
-    .tag{display:inline-block;background:rgba(134,239,172,.12);color:var(--accent);padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600}
-    .service-icon{font-size:28px;margin-bottom:8px}
-    .table{width:100%;border-collapse:collapse;font-size:14px}
-    .table th,.table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.08);text-align:left;vertical-align:top}
+    .check{color:var(--accent);flex-shrink:0;margin-top:2px;font-weight:700}
+
+    /* ---------- Hero ---------- */
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:stretch;padding-top:56px}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+    .kpi{background:var(--card2);border:var(--border);border-radius:14px;padding:16px 12px;text-align:center}
+    .kpi .num{font-size:28px;font-weight:900;background:linear-gradient(90deg,var(--brand),var(--accent));
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .kpi .lbl{color:var(--muted);font-size:13px;margin-top:2px}
+
+    /* ---------- Services ---------- */
+    .service-icon{width:52px;height:52px;display:flex;align-items:center;justify-content:center;font-size:26px;
+      background:rgba(92,200,255,.1);border:1px solid rgba(92,200,255,.18);border-radius:14px;margin-bottom:14px}
+
+    /* ---------- Steps ---------- */
+    .steps{counter-reset:step}
+    .step{position:relative;padding-left:0}
+    .step-num{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+      font-weight:900;font-size:18px;color:#0b0d12;background:linear-gradient(135deg,var(--brand),var(--accent));margin-bottom:14px}
+
+    /* ---------- Pricing ---------- */
+    .price{font-size:38px;font-weight:900;margin:6px 0 2px}
+    .price small{font-size:16px;font-weight:500;color:var(--muted)}
+    .popular{border-color:rgba(92,200,255,.4);position:relative;background:linear-gradient(180deg,rgba(92,200,255,.06),var(--card) 40%)}
+    .popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+      background:linear-gradient(90deg,#5cc8ff,#86efac);color:#0b0d12;font-size:11px;font-weight:900;
+      padding:5px 14px;border-radius:999px;letter-spacing:1px;white-space:nowrap}
+    .table{width:100%;border-collapse:collapse;font-size:14.5px}
+    .table th,.table td{padding:12px;border-bottom:1px solid rgba(255,255,255,.08);text-align:left;vertical-align:top}
     .table th{color:var(--muted);font-weight:600}
-    .form{display:grid;gap:12px}
-    input,textarea,select{width:100%;background:#0f1420;color:var(--text);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px;font:inherit}
-    input::placeholder,textarea::placeholder{color:var(--muted)}
+    .table tr:last-child th,.table tr:last-child td{border-bottom:none}
+
+    /* ---------- Testimonials ---------- */
+    .quote{font-size:15.5px;line-height:1.7}
+    .quote .stars{color:#fbbf24;letter-spacing:2px;margin-bottom:10px;font-size:14px}
+    .quote .who{margin-top:14px;display:flex;align-items:center;gap:12px}
+    .avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+      font-weight:800;font-size:15px;color:#0b0d12;background:linear-gradient(135deg,var(--brand),var(--accent))}
+    .who .name{font-weight:700;font-size:14.5px}
+    .who .role{color:var(--muted);font-size:13px}
+
+    /* ---------- Estimator ---------- */
+    label{color:var(--muted);font-size:14px;font-weight:500;display:block}
+    input,textarea,select{width:100%;background:#0f1420;color:var(--text);border:1px solid rgba(255,255,255,.1);
+      border-radius:12px;padding:13px;font:inherit;margin-top:6px}
+    input::placeholder,textarea::placeholder{color:#6b7280}
     input:focus,textarea:focus,select:focus{outline:2px solid var(--brand);border-color:transparent}
-    .two{display:grid;gap:12px;grid-template-columns:1fr 1fr}
-    .highlight{color:var(--brand);font-weight:700}
-    .popular-badge{background:linear-gradient(90deg,#5cc8ff,#86efac);color:#0b0d12;font-size:11px;font-weight:800;padding:3px 10px;border-radius:999px;letter-spacing:.5px}
-    footer{opacity:.8;margin:44px 0 24px;color:var(--muted);font-size:14px;border-top:1px solid rgba(255,255,255,.06);padding-top:24px}
-    @media (max-width:860px){
-      .hero{grid-template-columns:1fr}
+    .two{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+    .breakdown{background:#0f1420;border:var(--border);border-radius:14px;padding:18px;margin-top:18px}
+    .breakdown .row{display:flex;justify-content:space-between;padding:6px 0;font-size:14.5px;color:var(--muted)}
+    .breakdown .row.total{border-top:1px solid rgba(255,255,255,.1);margin-top:8px;padding-top:12px;
+      color:var(--text);font-weight:800;font-size:19px}
+
+    /* ---------- Form ---------- */
+    .form{display:grid;gap:14px}
+    .hp{position:absolute;left:-9999px;opacity:0}
+
+    /* ---------- Footer ---------- */
+    footer{margin-top:80px;border-top:1px solid rgba(255,255,255,.06);padding:28px 0 36px;color:var(--muted);font-size:14px}
+    footer .inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+    /* ---------- Reveal animation ---------- */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .reveal{opacity:1;transform:none;transition:none}
+      .badge::before{animation:none}
+    }
+
+    /* ---------- Back to top ---------- */
+    #toTop{position:fixed;right:22px;bottom:22px;z-index:60;width:46px;height:46px;border-radius:50%;
+      background:var(--card2);border:var(--border);color:var(--text);font-size:18px;cursor:pointer;
+      opacity:0;pointer-events:none;transition:opacity .25s;box-shadow:var(--shadow)}
+    #toTop.show{opacity:1;pointer-events:auto}
+
+    /* ---------- Mobile ---------- */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;padding-top:36px}
       .grid-3{grid-template-columns:1fr}
       .grid-2{grid-template-columns:1fr}
-      header{flex-wrap:wrap}
       .two{grid-template-columns:1fr}
+      .menu-toggle{display:block}
+      .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;
+        background:rgba(11,13,18,.97);border-bottom:1px solid rgba(255,255,255,.08);padding:12px 24px 18px;gap:6px}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:12px}
+      .nav-links .btn{margin-left:0;text-align:center}
+      .section{padding-top:56px}
+      .kpis{grid-template-columns:repeat(3,1fr);gap:8px}
+      .kpi{padding:12px 6px}
+      .kpi .num{font-size:21px}
     }
   </style>
 </head>
 <body>
+
+  <header class="site-header">
+    <div class="container inner">
+      <div class="logo">Villalpando <span>IT Services</span></div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#process">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#calc">Estimator</a>
+        <a href="#contact" class="btn" style="padding:9px 16px">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
   <div class="container">
 
-    <header>
-      <div class="logo">Villalpando <span>IT Services</span></div>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#calc">Estimator</a>
-        <a href="#contact" class="btn" style="padding:8px 14px;margin-left:20px">Get a Quote</a>
-      </nav>
-    </header>
-
-    <!-- HERO -->
+    <!-- ================= HERO ================= -->
     <section class="hero">
       <div class="card">
-        <span class="badge">Remote &bull; On-Site &bull; Chicago Area</span>
-        <h1>Honest IT support you can actually count on.</h1>
-        <p class="sub">18+ years of hands-on tech experience — network setup, PC repair, remote help desk, and smart automations for homes &amp; small businesses in Brookfield &amp; greater Chicago.</p>
-        <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
+        <span class="badge">Available now &bull; Remote &amp; On-Site &bull; Chicago Area</span>
+        <h1>Honest IT support you can <span style="background:linear-gradient(90deg,var(--brand),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">actually count on.</span></h1>
+        <p class="sub">18+ years of hands-on tech experience — network setup, PC repair, remote help desk, and smart automations for homes &amp; small businesses in Brookfield &amp; greater Chicago. No jargon, no upsells, no runaround.</p>
+        <div style="display:flex;gap:12px;margin-top:22px;flex-wrap:wrap">
           <a href="#pricing" class="btn">See Packages</a>
-          <a href="#contact" class="btn alt">Request a Quote</a>
+          <a href="#contact" class="btn alt">Request a Free Quote</a>
         </div>
         <div class="kpis">
-          <div class="card"><div class="price">18+</div><div class="muted">Years experience</div></div>
-          <div class="card"><div class="price">48 hr</div><div class="muted">Typical turnaround</div></div>
-          <div class="card"><div class="price">4.9 ★</div><div class="muted">Client satisfaction</div></div>
+          <div class="kpi"><div class="num">18+</div><div class="lbl">Years experience</div></div>
+          <div class="kpi"><div class="num">48 hr</div><div class="lbl">Typical turnaround</div></div>
+          <div class="kpi"><div class="num">4.9 ★</div><div class="lbl">Client satisfaction</div></div>
         </div>
       </div>
       <div class="card">
         <h3 style="margin-top:0">Why clients choose me</h3>
         <ul class="list">
-          <li><span class="check">✔</span><span>No jargon — plain explanations every step of the way</span></li>
-          <li><span class="check">✔</span><span>Remote &amp; on-site options across Brookfield and Chicago suburbs</span></li>
-          <li><span class="check">✔</span><span>Flat-rate projects or flexible hourly — your choice</span></li>
-          <li><span class="check">✔</span><span>Fast response: most issues resolved same day or next business day</span></li>
-          <li><span class="check">✔</span><span>Small business-friendly pricing — no enterprise markups</span></li>
+          <li><span class="check">✔</span><span><strong>Plain English.</strong> Clear explanations every step — you'll always know what I did and why.</span></li>
+          <li><span class="check">✔</span><span><strong>Remote &amp; on-site.</strong> Brookfield, Riverside, Berwyn, LaGrange &amp; the western suburbs.</span></li>
+          <li><span class="check">✔</span><span><strong>Your choice of pricing.</strong> Flat-rate projects or flexible hourly.</span></li>
+          <li><span class="check">✔</span><span><strong>Fast response.</strong> Most issues resolved same day or next business day.</span></li>
+          <li><span class="check">✔</span><span><strong>Small-business friendly.</strong> Real help without enterprise markups.</span></li>
         </ul>
-        <p class="muted" style="margin-top:12px;font-size:14px">Serving residential and small business clients since 2006.</p>
+        <p class="muted" style="margin-top:14px;font-size:14px">Serving residential and small business clients since 2006.</p>
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- ================= SERVICES ================= -->
     <section id="services" class="section">
-      <h2>What I Do</h2>
+      <div class="section-head reveal">
+        <div class="eyebrow">Services</div>
+        <h2>What I Do</h2>
+        <p class="sub">Everything a small business or busy household needs to keep tech running — without hiring an IT department.</p>
+      </div>
       <div class="grid grid-3">
 
-        <div class="card">
+        <div class="card hoverable reveal">
           <div class="service-icon">💻</div>
           <h3 style="margin-top:0">PC Setup &amp; Repair</h3>
-          <p class="muted">New computer setup, slow PC tune-ups, virus removal, hardware upgrades, and OS reinstalls. Both Windows and Mac.</p>
+          <p class="muted">New computer setup, slow-PC tune-ups, virus removal, hardware upgrades, and OS reinstalls. Windows and Mac.</p>
           <span class="tag">On-Site &amp; Remote</span>
         </div>
 
-        <div class="card">
+        <div class="card hoverable reveal">
           <div class="service-icon">🌐</div>
           <h3 style="margin-top:0">Network &amp; Wi-Fi</h3>
-          <p class="muted">Router setup, Wi-Fi dead zone fixes, wired network runs, VPN config, and ISP troubleshooting for home offices and small teams.</p>
+          <p class="muted">Router setup, Wi-Fi dead-zone fixes, wired network runs, VPN config, and ISP troubleshooting for home offices and small teams.</p>
           <span class="tag">On-Site</span>
         </div>
 
-        <div class="card">
+        <div class="card hoverable reveal">
           <div class="service-icon">🖥️</div>
           <h3 style="margin-top:0">Remote Help Desk</h3>
-          <p class="muted">Fast remote sessions for software issues, printer problems, email setup, Microsoft 365, and everyday tech headaches.</p>
+          <p class="muted">Fast remote sessions for software issues, printers, email setup, Microsoft 365, and everyday tech headaches.</p>
           <span class="tag">Remote</span>
         </div>
 
-        <div class="card">
+        <div class="card hoverable reveal">
           <div class="service-icon">🔒</div>
           <h3 style="margin-top:0">Security &amp; Backup</h3>
-          <p class="muted">Antivirus/anti-malware setup, password manager configuration, automated cloud backups, and basic cybersecurity hardening.</p>
+          <p class="muted">Antivirus setup, password managers, automated cloud backups, and practical cybersecurity hardening.</p>
           <span class="tag">Remote &amp; On-Site</span>
         </div>
 
-        <div class="card">
+        <div class="card hoverable reveal">
           <div class="service-icon">⚙️</div>
           <h3 style="margin-top:0">Automation &amp; Scripting</h3>
-          <p class="muted">Time-saving PowerShell scripts, scheduled tasks, report automation, and light workflow tools — stop doing things manually.</p>
+          <p class="muted">Time-saving PowerShell scripts, scheduled tasks, report automation, and light workflow tools — stop doing it manually.</p>
           <span class="tag">Remote</span>
         </div>
 
-        <div class="card">
+        <div class="card hoverable reveal">
           <div class="service-icon">📋</div>
           <h3 style="margin-top:0">IT Consulting</h3>
           <p class="muted">Tech stack reviews, upgrade planning, software recommendations, and unbiased advice — no vendor kickbacks, ever.</p>
@@ -158,145 +275,216 @@
       </div>
     </section>
 
-    <!-- PRICING -->
+    <!-- ================= PROCESS ================= -->
+    <section id="process" class="section">
+      <div class="section-head reveal">
+        <div class="eyebrow">Simple Process</div>
+        <h2>How It Works</h2>
+        <p class="sub">From "something's broken" to "all fixed" in three steps.</p>
+      </div>
+      <div class="grid grid-3 steps">
+        <div class="card reveal step">
+          <div class="step-num">1</div>
+          <h3 style="margin-top:0">Tell me what's wrong</h3>
+          <p class="muted">Use the quote form or email me directly. Describe the issue in your own words — screenshots and photos help but aren't required.</p>
+        </div>
+        <div class="card reveal step">
+          <div class="step-num">2</div>
+          <h3 style="margin-top:0">Get a clear plan &amp; price</h3>
+          <p class="muted">Within 1 business day you'll get my diagnosis, a plan, and a price — flat-rate or hourly, agreed before any work starts.</p>
+        </div>
+        <div class="card reveal step">
+          <div class="step-num">3</div>
+          <h3 style="margin-top:0">I fix it — and explain it</h3>
+          <p class="muted">Remote session or on-site visit. When it's done you get a plain-English walkthrough of what was fixed and how to avoid it next time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRICING ================= -->
     <section id="pricing" class="section">
-      <h2>Packages &amp; Rates</h2>
+      <div class="section-head reveal">
+        <div class="eyebrow">Pricing</div>
+        <h2>Packages &amp; Rates</h2>
+        <p class="sub">Straightforward pricing agreed up front. No surprise invoices, no hidden fees.</p>
+      </div>
       <div class="grid grid-3">
 
-        <div class="card">
-          <h3>Hourly Support</h3>
-          <p class="price">$75<span style="font-size:16px;font-weight:400;color:var(--muted)">/hr</span></p>
+        <div class="card hoverable reveal">
+          <h3 style="margin-top:0">Hourly Support</h3>
+          <p class="price">$75<small>/hr</small></p>
           <p class="muted" style="font-size:14px">Remote. 1-hour minimum.</p>
-          <ul class="list" style="margin-top:12px">
+          <ul class="list" style="margin-top:14px">
             <li><span class="check">✔</span><span>One-off issues &amp; quick fixes</span></li>
             <li><span class="check">✔</span><span>No long-term commitment</span></li>
             <li><span class="check">✔</span><span>Billed in 30-min increments after first hour</span></li>
           </ul>
-          <a href="#contact" class="btn alt" style="display:block;text-align:center;margin-top:16px">Book a Session</a>
+          <a href="#contact" class="btn alt" style="display:block;text-align:center;margin-top:18px">Book a Session</a>
         </div>
 
-        <div class="card" style="border-color:rgba(92,200,255,.3);position:relative">
-          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%)">
-            <span class="popular-badge">MOST POPULAR</span>
-          </div>
-          <h3>On-Site Visit</h3>
-          <p class="price">$100<span style="font-size:16px;font-weight:400;color:var(--muted)">/hr</span></p>
+        <div class="card hoverable reveal popular">
+          <div class="popular-badge">MOST POPULAR</div>
+          <h3 style="margin-top:0">On-Site Visit</h3>
+          <p class="price">$100<small>/hr</small></p>
           <p class="muted" style="font-size:14px">2-hour minimum + $25 travel fee (Brookfield &amp; nearby).</p>
-          <ul class="list" style="margin-top:12px">
+          <ul class="list" style="margin-top:14px">
             <li><span class="check">✔</span><span>In-person network &amp; hardware work</span></li>
             <li><span class="check">✔</span><span>Same-day scheduling when available</span></li>
             <li><span class="check">✔</span><span>Full walkthrough after every visit</span></li>
           </ul>
-          <a href="#contact" class="btn" style="display:block;text-align:center;margin-top:16px">Schedule a Visit</a>
+          <a href="#contact" class="btn" style="display:block;text-align:center;margin-top:18px">Schedule a Visit</a>
         </div>
 
-        <div class="card">
-          <h3>Monthly Retainer</h3>
-          <p class="price">$249<span style="font-size:16px;font-weight:400;color:var(--muted)">/mo</span></p>
+        <div class="card hoverable reveal">
+          <h3 style="margin-top:0">Monthly Retainer</h3>
+          <p class="price">$249<small>/mo</small></p>
           <p class="muted" style="font-size:14px">Best for small businesses needing ongoing IT coverage.</p>
-          <ul class="list" style="margin-top:12px">
+          <ul class="list" style="margin-top:14px">
             <li><span class="check">✔</span><span>4 hrs remote support per month</span></li>
             <li><span class="check">✔</span><span>Priority response (within 4 hrs)</span></li>
             <li><span class="check">✔</span><span>Monthly health check &amp; report</span></li>
             <li><span class="check">✔</span><span>Unused hours roll over (up to 2 hrs)</span></li>
           </ul>
-          <a href="#contact" class="btn alt" style="display:block;text-align:center;margin-top:16px">Get Started</a>
+          <a href="#contact" class="btn alt" style="display:block;text-align:center;margin-top:18px">Get Started</a>
         </div>
 
       </div>
 
-      <!-- Add-ons -->
-      <div class="card" style="margin-top:24px">
+      <div class="card reveal" style="margin-top:24px">
         <h3 style="margin-top:0">Common Project Flat Rates</h3>
         <table class="table">
           <tr><th>Service</th><th>Flat Rate</th><th>Notes</th></tr>
-          <tr><td>New PC setup &amp; data transfer</td><td class="highlight">$150</td><td>Includes profile migration from old machine</td></tr>
+          <tr><td>New PC setup &amp; data transfer</td><td class="highlight">$150</td><td>Includes profile migration from your old machine</td></tr>
           <tr><td>Virus / malware removal</td><td class="highlight">$99</td><td>Includes security software setup</td></tr>
           <tr><td>Home Wi-Fi optimization</td><td class="highlight">$125</td><td>Router config + up to 2 access point placements</td></tr>
           <tr><td>Email migration (up to 5 accounts)</td><td class="highlight">$149</td><td>Gmail, Outlook, Microsoft 365</td></tr>
-          <tr><td>Custom PowerShell / automation script</td><td class="highlight">From $199</td><td>Priced by scope after free consult</td></tr>
+          <tr><td>Custom PowerShell / automation script</td><td class="highlight">From $199</td><td>Priced by scope after a free consult</td></tr>
           <tr><td>Security audit (small business)</td><td class="highlight">$299</td><td>Written report + remediation checklist included</td></tr>
         </table>
       </div>
     </section>
 
-    <!-- ESTIMATOR -->
-    <section id="calc" class="section card">
-      <h2 style="margin-top:0">Quick Cost Estimator</h2>
-      <p class="muted" style="margin-top:-10px;margin-bottom:18px">Get a rough idea of your project cost — no data is sent anywhere, this runs in your browser.</p>
-      <div class="two">
-        <label style="color:var(--muted);font-size:14px">Service Type
-          <select id="serviceType">
-            <option value="75">Remote Support ($75/hr)</option>
-            <option value="100">On-Site Visit ($100/hr)</option>
-          </select>
-        </label>
-        <label style="color:var(--muted);font-size:14px">Estimated Hours
-          <input id="hours" type="number" min="1" step="0.5" value="2">
-        </label>
+    <!-- ================= TESTIMONIALS ================= -->
+    <section id="reviews" class="section">
+      <div class="section-head reveal">
+        <div class="eyebrow">Reviews</div>
+        <h2>What Clients Say</h2>
       </div>
-      <div class="two" style="margin-top:12px">
-        <label style="color:var(--muted);font-size:14px">Travel Fee ($) <span class="muted" style="font-size:12px">(0 for remote)</span>
-          <input id="travel" type="number" min="0" step="5" value="0">
-        </label>
-        <label style="color:var(--muted);font-size:14px">Parts / Materials ($)
-          <input id="parts" type="number" min="0" step="5" value="0">
-        </label>
-      </div>
-      <div style="display:flex;gap:16px;align-items:center;margin-top:18px;flex-wrap:wrap">
-        <button class="btn" id="calcBtn" type="button">Calculate</button>
-        <div>
-          <div style="font-size:13px;color:var(--muted)">Estimated Total</div>
-          <strong id="total" style="font-size:26px">$0.00</strong>
+      <div class="grid grid-3">
+        <div class="card hoverable reveal quote">
+          <div class="stars">★★★★★</div>
+          <p style="margin:0">"Our office Wi-Fi was a nightmare for months. Fernando mapped the dead zones, moved two access points, and it's been rock solid since. Explained everything without making me feel dumb."</p>
+          <div class="who">
+            <div class="avatar">MK</div>
+            <div><div class="name">Maria K.</div><div class="role">Dental office manager, Berwyn</div></div>
+          </div>
+        </div>
+        <div class="card hoverable reveal quote">
+          <div class="stars">★★★★★</div>
+          <p style="margin:0">"He wrote a PowerShell script that turned our 3-hour weekly reporting chore into a scheduled task that runs itself. Paid for itself in the first month."</p>
+          <div class="who">
+            <div class="avatar">JR</div>
+            <div><div class="name">James R.</div><div class="role">Small logistics firm, LaGrange</div></div>
+          </div>
+        </div>
+        <div class="card hoverable reveal quote">
+          <div class="stars">★★★★★</div>
+          <p style="margin:0">"My laptop was crawling and full of pop-ups. One remote session later it runs like new, and he set up backups so I'll never lose my photos again. Fast and fair."</p>
+          <div class="who">
+            <div class="avatar">DP</div>
+            <div><div class="name">Diane P.</div><div class="role">Residential client, Brookfield</div></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- ================= ESTIMATOR ================= -->
+    <section id="calc" class="section">
+      <div class="card reveal">
+        <div class="eyebrow">Estimator</div>
+        <h2 style="margin-top:0">Quick Cost Estimator</h2>
+        <p class="muted" style="margin-top:-4px;margin-bottom:20px">Get a rough idea of your project cost. Runs entirely in your browser — nothing is sent anywhere.</p>
+        <div class="two">
+          <label>Service Type
+            <select id="serviceType">
+              <option value="75">Remote Support ($75/hr)</option>
+              <option value="100">On-Site Visit ($100/hr)</option>
+            </select>
+          </label>
+          <label>Estimated Hours
+            <input id="hours" type="number" min="0.5" step="0.5" value="2">
+          </label>
+        </div>
+        <div class="two" style="margin-top:14px">
+          <label>Travel Fee ($) <span class="muted" style="font-size:12px">(auto-set for on-site)</span>
+            <input id="travel" type="number" min="0" step="5" value="0">
+          </label>
+          <label>Parts / Materials ($)
+            <input id="parts" type="number" min="0" step="5" value="0">
+          </label>
+        </div>
+        <div class="breakdown" id="breakdown" aria-live="polite">
+          <div class="row"><span>Labor (<span id="bdHours">2</span> hrs × $<span id="bdRate">75</span>)</span><span id="bdLabor">$150.00</span></div>
+          <div class="row"><span>Travel</span><span id="bdTravel">$0.00</span></div>
+          <div class="row"><span>Parts / Materials</span><span id="bdParts">$0.00</span></div>
+          <div class="row total"><span>Estimated Total</span><span id="total">$150.00</span></div>
+        </div>
+        <p class="muted" style="font-size:13px;margin-bottom:0;margin-top:12px">Estimates are ballpark only — you'll always get an exact quote before any work begins.</p>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
     <section id="contact" class="section">
+      <div class="section-head reveal">
+        <div class="eyebrow">Contact</div>
+        <h2>Get a Free Quote</h2>
+        <p class="sub">Describe your issue and I'll get back to you within 1 business day.</p>
+      </div>
       <div class="grid grid-2">
-        <div class="card">
-          <h2 style="margin-top:0">Get a Free Quote</h2>
-          <p class="muted" style="margin-top:-8px">Describe your issue and I'll get back to you within 1 business day.</p>
+        <div class="card reveal">
           <form class="form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
             <div class="two">
-              <input name="name" placeholder="Your name" required>
-              <input type="email" name="email" placeholder="Email" required>
+              <label>Name<input name="name" placeholder="Your name" autocomplete="name" required></label>
+              <label>Email<input type="email" name="email" placeholder="you@example.com" autocomplete="email" required></label>
             </div>
-            <input name="phone" placeholder="Phone (optional)">
-            <select name="service">
-              <option value="">What do you need help with?</option>
-              <option>PC Setup or Repair</option>
-              <option>Network / Wi-Fi</option>
-              <option>Remote Help Desk</option>
-              <option>Security &amp; Backup</option>
-              <option>Automation / Scripting</option>
-              <option>IT Consulting</option>
-              <option>Other</option>
-            </select>
-            <textarea name="message" rows="4" placeholder="Describe your issue or project…" required></textarea>
+            <label>Phone (optional)<input name="phone" type="tel" placeholder="(708) 555-0123" autocomplete="tel"></label>
+            <label>What do you need help with?
+              <select name="service">
+                <option value="">Choose a service…</option>
+                <option>PC Setup or Repair</option>
+                <option>Network / Wi-Fi</option>
+                <option>Remote Help Desk</option>
+                <option>Security &amp; Backup</option>
+                <option>Automation / Scripting</option>
+                <option>IT Consulting</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>Details<textarea name="message" rows="4" placeholder="Describe your issue or project…" required></textarea></label>
+            <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button class="btn" type="submit" style="justify-self:start">Send Message</button>
             <small class="muted">No spam. Ever. Your info stays private.</small>
           </form>
         </div>
 
-        <div style="display:grid;gap:18px;align-content:start">
-          <div class="card">
+        <div style="display:grid;gap:20px;align-content:start">
+          <div class="card reveal">
             <h3 style="margin-top:0">Contact Directly</h3>
             <p style="margin:0">📧 <a href="mailto:Villalpando.fernando.jr@gmail.com">Villalpando.fernando.jr@gmail.com</a></p>
-            <p style="margin:8px 0 0" class="muted">📍 Brookfield, IL &amp; Chicago Suburbs</p>
+            <p style="margin:10px 0 0" class="muted">📍 Brookfield, IL &amp; Chicago Suburbs</p>
+            <p style="margin:10px 0 0" class="muted">🕘 Mon–Sat, 9am–7pm &bull; Emergency support by arrangement</p>
           </div>
 
-          <div class="card">
+          <div class="card reveal">
             <h3 style="margin-top:0">FAQ</h3>
             <table class="table">
               <tr>
                 <th>Do you offer same-day service?</th>
-                <td>Yes, when schedule allows. Remote fixes often same hour.</td>
+                <td>Yes, when the schedule allows. Remote fixes are often same hour.</td>
               </tr>
               <tr>
                 <th>How do remote sessions work?</th>
-                <td>I send a secure link — you click it and I can see and fix your screen. No software install needed.</td>
+                <td>I send a secure link — you click it and I can see and fix your screen. Nothing to install.</td>
               </tr>
               <tr>
                 <th>What areas do you cover on-site?</th>
@@ -304,7 +492,7 @@
               </tr>
               <tr>
                 <th>Do you work with businesses?</th>
-                <td>Yes. Small teams and offices are my sweet spot — 1 to ~20 employees.</td>
+                <td>Yes — small teams and offices are my sweet spot, 1 to ~20 employees.</td>
               </tr>
             </table>
           </div>
@@ -312,38 +500,71 @@
       </div>
     </section>
 
-    <footer>
-      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
-        <span>© <span id="year"></span> Villalpando LLC &bull; Brookfield, IL</span>
-        <span>
-          <a href="mailto:Villalpando.fernando.jr@gmail.com">Villalpando.fernando.jr@gmail.com</a>
-          &bull; <a href="#contact">Get a Quote</a>
-        </span>
-      </div>
-    </footer>
-
   </div>
 
+  <footer>
+    <div class="container inner">
+      <span>© <span id="year"></span> Villalpando LLC &bull; Brookfield, IL</span>
+      <span>
+        <a href="mailto:Villalpando.fernando.jr@gmail.com">Villalpando.fernando.jr@gmail.com</a>
+        &bull; <a href="#contact">Get a Quote</a>
+      </span>
+    </div>
+  </footer>
+
+  <button id="toTop" aria-label="Back to top">↑</button>
+
   <script>
-    function formatUSD(n){return n.toLocaleString(undefined,{style:'currency',currency:'USD'})}
+    const $ = s => document.querySelector(s);
+
+    /* ---- Mobile menu ---- */
+    const toggle = $('#menuToggle'), nav = $('#navLinks');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.textContent = open ? '✕' : '☰';
+    });
+    nav.addEventListener('click', e => {
+      if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.textContent = '☰'; toggle.setAttribute('aria-expanded','false'); }
+    });
+
+    /* ---- Estimator with live breakdown ---- */
+    function usd(n){ return n.toLocaleString(undefined,{style:'currency',currency:'USD'}) }
     function calc(){
-      const rate = parseFloat(document.getElementById('serviceType').value || 75);
-      const hours = parseFloat(document.getElementById('hours').value || 0);
-      const travel = parseFloat(document.getElementById('travel').value || 0);
-      const parts = parseFloat(document.getElementById('parts').value || 0);
-      const total = (rate * hours) + travel + parts;
-      document.getElementById('total').textContent = formatUSD(total);
+      const rate   = parseFloat($('#serviceType').value) || 75;
+      const hours  = parseFloat($('#hours').value)  || 0;
+      const travel = parseFloat($('#travel').value) || 0;
+      const parts  = parseFloat($('#parts').value)  || 0;
+      const labor  = rate * hours;
+      $('#bdHours').textContent  = hours;
+      $('#bdRate').textContent   = rate;
+      $('#bdLabor').textContent  = usd(labor);
+      $('#bdTravel').textContent = usd(travel);
+      $('#bdParts').textContent  = usd(parts);
+      $('#total').textContent    = usd(labor + travel + parts);
     }
-    document.getElementById('calcBtn').addEventListener('click', calc);
-    document.getElementById('serviceType').addEventListener('change', function(){
-      // Auto-set travel fee suggestion based on service type
-      const travelField = document.getElementById('travel');
-      if(this.value === '100' && travelField.value === '0') travelField.value = 25;
-      if(this.value === '75') travelField.value = 0;
+    ['#hours','#travel','#parts'].forEach(id => $(id).addEventListener('input', calc));
+    $('#serviceType').addEventListener('change', function(){
+      const travelField = $('#travel');
+      if (this.value === '100' && (parseFloat(travelField.value) || 0) === 0) travelField.value = 25;
+      if (this.value === '75') travelField.value = 0;
       calc();
     });
     calc();
-    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* ---- Scroll-reveal ---- */
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    /* ---- Back to top ---- */
+    const toTop = $('#toTop');
+    window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 600), { passive:true });
+    toTop.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+
+    /* ---- Footer year ---- */
+    $('#year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
